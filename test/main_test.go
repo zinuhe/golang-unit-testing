@@ -18,6 +18,8 @@
 // export GOPROXY=https://gocenter.io
 // go get github.com/stretchr/testify/assert
 
+// go1.15.13 version
+
 package main
 
 import (

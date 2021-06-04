@@ -10,6 +10,10 @@
 // On an older version of Go you can get this package by typing:
 // go get github.com/stretchr/testify
 
+// This works
+// go mod init github.com/stretchr/testify
+// go mod tidy
+
 package main
 
 import (

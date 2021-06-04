@@ -10,9 +10,13 @@
 // On an older version of Go you can get this package by typing:
 // go get github.com/stretchr/testify
 
-// This works
+// This works -not so much
 // go mod init github.com/stretchr/testify
 // go mod tidy
+// go get github.com/stretchr/testify/assert
+
+// export GOPROXY=https://gocenter.io
+// go get github.com/stretchr/testify/assert
 
 package main
 
@@ -24,33 +28,33 @@ import (
 // Without import "github.com/stretchr/testify/assert"
 // We can then try run this simple test by calling go test ./... -v
 // passing in the -v flag to ensure we can see a more verbose output.
-func testAdd_3(t *testing.T) {
-    if add(2, 2) != 4 {
-        t.Error("Expected 2 + 2 to equal 4")
-    }
-}
+// func testAdd_3(t *testing.T) {
+//     if add(2, 2) != 4 {
+//         t.Error("Expected 2 + 2 to equal 4")
+//     }
+// }
 
 
-func testAdd_2(t *testing.T) {
+func testAdd(t *testing.T) {
     assert.Equal(t, add(2, 2), 4)
 }
 
 
-func testAdd(t *testing.T) {
-    assert := assert.New(t)
-
-    var tests = []struct {
-        input1    int
-        input2    int
-        expected  int
-    }{
-        {2, 2, 4},
-        {-1, 1, 0},
-        {0, 2, 2},
-        {-5, -3, -8},
-    }
-
-    for _, test := range tests {
-        assert.Equal(add(test.input1, test.input2), test.expected)
-    }
-}
+// func testAdd(t *testing.T) {
+//     assert := assert.New(t)
+//
+//     var tests = []struct {
+//         input1    int
+//         input2    int
+//         expected  int
+//     }{
+//         {2, 2, 4},
+//         {-1, 1, 0},
+//         {0, 2, 2},
+//         {-5, -3, -8},
+//     }
+//
+//     for _, test := range tests {
+//         assert.Equal(add(test.input1, test.input2), test.expected)
+//     }
+// }

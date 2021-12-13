@@ -1,2 +1,2 @@
-# golang-unit-testing
-Examples fo unit testing
+# Golang Unit Testing
+Examples of unit testing
